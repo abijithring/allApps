@@ -1,13 +1,23 @@
 import React, { ReactNode } from 'react';
-import SideNavigation from '../Components/SideNavigation'
+import { Routes, Route } from "react-router-dom";
+import SideNavigation from '../Components/SideNavigation';
+import Bootstrap from './Bootstrap';
+import UseStateProg from './UseStateProg';
+import PropPrograms from './PropPrograms';
+import Operators from './Operators';
 
 
 
 const AllApps : React.FC = () => {
   return (
     <SideNavigation>
-      <h1>Welcome to My Page</h1>
-      <p>This is the content section.</p>
+      <Routes>
+        <Route path="/bootstrap" element={<Bootstrap />} />
+        <Route path="/usestateprog" element={<UseStateProg />} />
+        <Route path="/propprograms" element={<PropPrograms />} />
+        <Route path="/operators" element={<Operators />} />
+        {/* Add a default route if needed */}
+      </Routes>
     </SideNavigation>
   );
 };
