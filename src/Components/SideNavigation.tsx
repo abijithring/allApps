@@ -1,33 +1,31 @@
-import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
-import './styles/Sidebar.css'; // Make sure this path matches your CSS module file
+import React, {ReactNode} from 'react';
+import { Container, Row, Col, Nav } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const SideNavigation=()=>{
-    const [isOpen, setIsOpen] = useState(false);
-
+// Add a type for props that includes children
+type SideNavigationProps = {
+  children: ReactNode;
+};
+const SideNavigation: React.FC<SideNavigationProps> = ({ children }: SideNavigationProps) => {
   return (
-    <div className={`sidebar ${isOpen ? 'open' : ''}`}>
-      <button className='toggle-btn' onClick={() => setIsOpen(!isOpen)}> 
-        ☰
-      </button>
-        <nav className="nav">
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/allapps">All Apps</Link>
-                </li>
-                <li>
-                    <Link to="/bootstrap">Bootstrap</Link>
-                </li>
-                <li>
-                    <Link to="/contact">Contact</Link>
-                </li>
-            </ul>
-        </nav>    
-      
-    </div>
+    <Container fluid>
+      <Row>
+        {/* Sidebar */}
+        <Col xs={3} md={2} className="bg-dark text-white vh-100 p-3">
+          <Nav className="flex-column">
+            <Nav.Link href="#" className="text-white">Bootstrap</Nav.Link>
+            <Nav.Link href="#" className="text-white">UseStateProg</Nav.Link>
+            <Nav.Link href="#" className="text-white">PropPrograms</Nav.Link>
+            <Nav.Link href="#" className="text-white">Operators</Nav.Link>
+          </Nav>
+        </Col>
+
+        {/* Content Section */}
+        <Col xs={9} md={10} className="p-4">
+          {children}
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

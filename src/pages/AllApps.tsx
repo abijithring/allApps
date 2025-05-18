@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { ReactNode } from 'react';
 import SideNavigation from '../Components/SideNavigation'
-import { Routes, Route } from 'react-router-dom'
 
-export default function AllApps() {
+
+
+const AllApps : React.FC = () => {
   return (
-    <div>
-      <SideNavigation />      
-    </div>
-  )
-}
+    <SideNavigation>
+      <h1>Welcome to My Page</h1>
+      <p>This is the content section.</p>
+    </SideNavigation>
+  );
+};
+
+export default AllApps;
