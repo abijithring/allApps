@@ -20,7 +20,7 @@ export default function Bootstrap() {
       </div>
       <div className="container">
         <div className="row">
-          <div className="col-md-4">
+          <div className="col-md-4 me-5">
             <div className="card">
               <div className="card-body">
                 <h5 className="card-title">Tech Courses</h5>
@@ -28,7 +28,7 @@ export default function Bootstrap() {
               </div>
             </div>
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4 me-5">
             <div className="card">
               <div className="card-body">
                 <h5 className="card-title">Card 2</h5>
