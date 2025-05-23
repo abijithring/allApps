@@ -5,6 +5,9 @@ import AllApps from './pages/AllApps';
 import Navbar from './Components/Navbar';
 import Bootstrap from './pages/Bootstrap';
 import Contact from './pages/Contact';
+import TopicsCard from './pages/TopicsCard';
+import PropPrograms from './pages/PropPrograms';
+import SuperSetComponents from './Components/SuperSetComponents';
 
 function App() {
     return (
@@ -15,6 +18,9 @@ function App() {
                 <Route path="/allapps" element={<AllApps />} />
                 <Route path="/bootstrap" element={<Bootstrap />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/topiccards" element={<TopicsCard lession1='REACT JS SESSION' lession2='ANGULAR SESSION' />} />
+                <Route path="/greetings" element={<PropPrograms />} />
+                <Route path="/superSetComponents" element={<SuperSetComponents/>} />
             </Routes>
         </>
     );

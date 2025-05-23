@@ -1,0 +1,18 @@
+.card{
+    border-radius: 10px;
+    padding: 10px;
+    margin: auto;
+    margin-top: 50px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(38, 91, 204, 0.1);
+    background: linear-gradient(45deg, rgb(64, 55, 199) 70%,     rgb(2, 2, 51)    50%);
+    width: 250px;
+    height: 150px;
+    display: flex;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center wrap;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+
+}

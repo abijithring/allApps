@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
+import Greetings from '../Components/Greetings';
 
 export default function PropPrograms() {
   return (
     <div>
-      <h1>Using props</h1>
+      
+      <Greetings user="Dhoni"/><Greetings user="Virat" />
+      <Greetings user="Rohit">
+        <p>Welcome to the cricket world!</p>
+        <button className='btn btn-primary'>Click Me</button>
+      </Greetings>
+     
     </div>
   )
 }
