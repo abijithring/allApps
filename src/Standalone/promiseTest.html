@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Promise Test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+</head>
+<body>
+    <script>
+        //intialize a promise
+        const promise1 = new Promise((resolve, reject) => {
+            resolve("Promise resolved successfully!");
+            //Simulate an asynchronous operation
+            setTimeout(() => {
+                const success = true; // Change to false to test rejection
+                if (success) {
+                    resolve("Promise resolved successfully!");
+                } else {
+                    reject("Promise rejected!");
+                }
+            }, 5000);
+        });
+        
+
+    </script>
+    
+    <script>
+        console.log("Promise created")
+        //consume the promise
+         promise1.then((response) => {
+                console.log("Promise resolved:"+response);
+            })
+    </script>
+</body>
+        
+
+</html>

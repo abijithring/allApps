@@ -20,6 +20,8 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ children }: SideNavigat
             <Nav.Link as={NavLink} to="/superSetComponents" className="text-white">SuperSetComponents</Nav.Link>
             <Nav.Link as={NavLink} to="/topiccards" className="text-white">TopicsCard</Nav.Link>
             <Nav.Link as={NavLink} to="/greetings" className="text-white">Greetings Props</Nav.Link>
+            <Nav.Link as={NavLink} to="/useEffectCnt" className="text-white">Use Effect Cnt</Nav.Link>
+            <Nav.Link as={NavLink} to="/employeeList" className="text-white">Employees List</Nav.Link>
           </Nav>
         </Col>
 
