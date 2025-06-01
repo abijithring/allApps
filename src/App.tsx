@@ -11,6 +11,7 @@ import SuperSetComponents from './Components/SuperSetComponents';
 import StateSubscriptionPage from './pages/StateSubscriptionPage';
 import UserEffectCounter from './Components/UserEffectCounter';
 import EmployeeList from './Components/EmployeeList';
+import UsersList from './Components/UsersList';
 
 function App() {
     return (
@@ -27,6 +28,8 @@ function App() {
                 <Route path="/usestateprog" element={<StateSubscriptionPage />} />
                 <Route path="/useEffectCnt" element={<UserEffectCounter />} />
                 <Route path="/employeeList" element={<EmployeeList />} />
+                <Route path="/usersList" element={<UsersList/>} />
+                {/* Add more routes as needed */}
 
             </Routes>
         </>
