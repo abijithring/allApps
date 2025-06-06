@@ -22,7 +22,7 @@ function App() {
                 <Route path="/allapps/*" element={<AllApps />} />
                 <Route path="/bootstrap" element={<Bootstrap />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/topiccards" element={<TopicsCard lession1='REACT JS SESSION' lession2='ANGULAR SESSION' />} />
+                <Route path="/topiccards" element={<TopicsCard lession1='REMOTELY PILOTED' lession2='GPS and SENSORS' />} />
                 <Route path="/greetings" element={<PropPrograms />} />
                 <Route path="/superSetComponents" element={<SuperSetComponents/>} />
                 <Route path="/usestateprog" element={<StateSubscriptionPage />} />

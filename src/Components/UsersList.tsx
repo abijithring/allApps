@@ -1,7 +1,12 @@
 import React,{useEffect, useState} from 'react'
 import axios from 'axios';
+// If UserServices is exported as a class with static methods:
 import UserServices from '../services/UserServices';
+
+// OR, if getAllUsersDetails is a named export (function) from UserServices.ts, use:
+// import { getAllUsersDetails } from '../services/UserServices';
 import { Table } from 'react-bootstrap';
+import CreateUsers from './CreateUsers';
 
 
 
@@ -30,14 +35,14 @@ type Company = {
     bs?: string;
 };
 
-export default function UsersList() {
+const UsersList: React.FC = () => {
 
-    const [users, setUsers] = useState<User[]>([]);
-    const [errorMsg, setErrorMsg] = useState<string>(''); // State to hold error messages
+    const [users, setUsers] = useState<User[]>([]); // Add errorMsg state to handle error messages
+    const [errorMsg, setErrorMsg] = useState<string>('');
 
     useEffect(() => {
-        const fetchUsers = async () => {
-            UserServices.getAllUsersDetails()
+        // If UserServices is a class with static method:
+        UserServices.getAllUsersDetails()
             .then(response => {
                 console.log(response.data); // Log the fetched data to the console
                 setUsers(response.data as User[]); // Set the users state with the fetched data
@@ -46,17 +51,13 @@ export default function UsersList() {
                 console.error('Error fetching users:', error);
                 setErrorMsg('Failed to fetch users.'); // Set error message state
             });
-            
-        };
+    }, []); // only run once when the component mounts
 
-        fetchUsers();
-    }, []);// only run once when the component mounts
-
-  return (
-    errorMsg? <p style={{color: 'red', fontSize: '14px'}}>{errorMsg}</p> : 
-    <section>
+    return (
+        errorMsg ? <p style={{color: 'red', fontSize: '14px'}}>{errorMsg}</p> : 
+        <section>
             <h2><center>Full Time Employee list</center></h2>
-            {
+           
                 <Table striped bordered hover size="sm" variant="dark">
                     <thead style={{backgroundColor: 'burlywood', textAlign: 'center', color: 'black'}}> 
                         <tr>
@@ -94,9 +95,21 @@ export default function UsersList() {
                             ))
                         }
                     </tbody>
+                    
                 </Table>
-            }
-          
+                <div className='card bg-light mb-3' style={{width: '50rem', marginLeft: '20px', height: '20rem'}}>
+                    <CreateUsers />
+                </div>
+            
+
         </section>
+
+
   );
-}
+};
+
+
+
+export default UsersList; 
+
+
